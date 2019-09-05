@@ -10,21 +10,22 @@ import java.util.Scanner;
 public class RandomGame {
     public static void main(String[] args) {
         Random r = new Random();
-        int randomNum = r.nextInt(100) + 1;
-        Scanner sc = new Scanner(System.in);
+        int randomNum = r.nextInt( 100 ) + 1;
+        Scanner sc = new Scanner( System.in );
 
-        while (true){
-            System.out.println("请输入您猜测的数字：");
-            int guessNum = sc.nextInt();//键盘输入猜测的数字
-            if (guessNum > randomNum){
-                System.out.println("数字太大！请重试。");
-            }else if (guessNum < randomNum){
-                System.out.println("数字太小！请重试。");
-            }else {
-                System.out.println("恭喜你，猜中了！");
+        while (true) {
+            System.out.println( "请输入您猜测的数字：" );
+            //键盘输入猜测的数字
+            int guessNum = sc.nextInt();
+            if (guessNum > randomNum) {
+                System.out.println( guessNum + "数字太大！请重试。" );
+            } else if (guessNum < randomNum) {
+                System.out.println( guessNum + "数字太小！请重试。" );
+            } else {
+                System.out.println( "恭喜你，猜中了！" );
                 break;//如果猜中，不再重试
             }
         }
-        System.out.println("游戏结束。");
+        System.out.println( "游戏结束。" );
     }
 }
