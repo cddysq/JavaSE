@@ -1,9 +1,12 @@
 package com.javase.study;
 
 
+import com.javase.study.util.ArrayTool;
 import org.junit.Test;
 
-import java.util.Scanner;
+import javax.sound.midi.Soundbank;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class Clutter {
 
@@ -41,6 +44,16 @@ public class Clutter {
         int sum = getSum( array );
         int avg = (sum - max - min) / (array.length - 1);
         System.out.println( "选手的最终成绩为：" + avg );
+
+        System.out.println( "==========排序===========" );
+        Scanner scanner = new Scanner( System.in );
+        System.out.println( "请输入第一个整数：" );
+        int x = scanner.nextInt();
+        System.out.println( "请输入第二个整数：" );
+        int y = scanner.nextInt();
+        System.out.println( "请输入第三个整数：" );
+        int z = scanner.nextInt();
+        t( x, y, z );
 
     }
 
@@ -170,5 +183,18 @@ public class Clutter {
             }
             System.out.println();
         }
+    }
+
+    public static void t(int a, int b, int c) {
+        int[] arr = new int[3];
+        arr[0] = a;
+        arr[1] = b;
+        arr[2] = c;
+        Arrays.sort( arr );
+        String s = "";
+        for (int i = arr.length - 1; i >= 0; i--) {
+            s += arr[i] + " ";
+        }
+        System.out.println( "从大到小的顺序是：" + s );
     }
 }

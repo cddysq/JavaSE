@@ -8,16 +8,17 @@ import java.util.Scanner;
  */
 public class Case_Arrays {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("请输入要进行排序的字符数据：");
+        Scanner sc = new Scanner( System.in );
+        System.out.println( "请输入要进行排序的字符数据：" );
         String input = sc.next();
         //String --> 数组，用toCharArray
         char[] chars = input.toCharArray();
-        Arrays.sort(chars);//进行排序
+        //进行排序
+        Arrays.sort( chars );
 
         //倒序遍历数组、
         for (int i = chars.length - 1; i >= 0; i--) {
-            System.out.println(chars[i]);
+            System.out.println( chars[i] );
         }
     }
 }

@@ -14,15 +14,15 @@ public class Case_ArrayList4 {
 
         //将生成的随机数放入大集合中
         for (int i = 0; i < 20; i++) {
-            int num = r.nextInt(100) + 1;
-            bigList.add(num);
+            int num = r.nextInt( 100 ) + 1;
+            bigList.add( num );
         }
 
         //获取小集合元素遍历输出
-        ArrayList<Integer> smaillList = getSmallList(bigList);
-        System.out.println("集合的总个数为：" + smaillList.size());
+        ArrayList<Integer> smaillList = getSmallList( bigList );
+        System.out.println( "集合的总个数为：" + smaillList.size() );
         for (int i = 0; i < smaillList.size(); i++) {
-            System.out.println(smaillList.get(i));
+            System.out.println( smaillList.get( i ) );
         }
     }
 
@@ -31,9 +31,10 @@ public class Case_ArrayList4 {
         //创建一个小集合，用来装偶数结果
         ArrayList<Integer> smallList = new ArrayList<>();
         for (int i = 0; i < bigList.size(); i++) {
-            int num = bigList.get(i);
-            if (num % 2 == 0) {//将遍历后的大集合进行条件筛选
-                smallList.add(num);
+            int num = bigList.get( i );
+            //将遍历后的大集合进行条件筛选
+            if (num % 2 == 0) {
+                smallList.add( num );
             }
         }
         return smallList;

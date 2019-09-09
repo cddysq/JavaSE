@@ -14,31 +14,32 @@ public class StringConvert {
     public static void main(String[] args) {
         //转换成为字符数组
         char[] chars = "Hello".toCharArray();
-        System.out.println(chars[0]);
-        System.out.println(chars.length);
-        System.out.println("=================================");
+        System.out.println( chars[0] );
+        System.out.println( chars.length );
+        System.out.println( "=================================" );
 
-        //转换成为字节数组
-        byte[] bytes = "abc".getBytes();//转换成为'a','b','c'
+        //转换成为字节数组,转换成为'a','b','c'
+        byte[] bytes = "abc".getBytes();
         for (int i = 0; i < bytes.length; i++) {
-            System.out.println(bytes[i]);
+            System.out.println( bytes[i] );
         }
-        System.out.println("=================================");
+        System.out.println( "=================================" );
 
         //字符替换，例如用于不良言语处理
         String say = "你妈死了，你爸死了，毛病，不会玩,玩你妈逼！";
         String Handle = "*";
-        String say2 = say.replace("妈", Handle).replace("爸", Handle).
-                replace("死", Handle).replace("逼", Handle).replace("毛病", Handle);
-        System.out.println(say2);
-        System.out.println("=================================");
+        String say2 = say.replace( "妈", Handle ).replace( "爸", Handle ).
+                replace( "死", Handle ).replace( "逼", Handle ).replace( "毛病", Handle );
+        System.out.println( say2 );
+        System.out.println( "=================================" );
 
         //拆分字符
         String split = "aaa.bbb.ccc";
-        String[] array = split.split("\\.");//.需要使用转义
-        System.out.println("数组长度为=" + array.length);
+        //.需要使用转义
+        String[] array = split.split( "\\." );
+        System.out.println( "数组长度为=" + array.length );
         for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+            System.out.println( array[i] );
         }
     }
 }

@@ -38,7 +38,8 @@ public class Test_String {
         System.out.println( "=========================" );
         //基本类型 -> 字符串(String)
         int i1 = 100;
-        String s1 = i1 + "";//直接加上""为最常用转换写法
+        //直接加上""为最常用转换写法
+        String s1 = i1 + "";
         System.out.println( s1 + 200 );
 
         String s2 = Integer.toString( 100 );
