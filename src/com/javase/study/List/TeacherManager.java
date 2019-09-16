@@ -13,6 +13,9 @@ public class TeacherManager {
     public static void main(String[] args) {
         //使用集合储存教师数据
         ArrayList<Teacher> arrayList = new ArrayList<>();
+        for (int i = 0; i < arrayList.size(); i++) {
+            Teacher teacher = arrayList.get( i );
+        }
         while (true) {
             System.out.println( "----------欢迎来到教师管理系统----------" );
             System.out.println( "1 添加教师" );

@@ -5,7 +5,8 @@ package com.javase.study.Math;
  */
 public class MathPractise {
     public static void main(String[] args) {
-        int count = 0;//符合要求的数量
+        //符合要求的数量
+        int count = 0;
         double min = -10.8;
         double max = 5.9;
         for (int i = (int) Math.ceil(min); i < max; i++) {

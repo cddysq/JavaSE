@@ -69,11 +69,13 @@ public class Exception {
 
         //运行时异常被抛出可以不处理。即不捕获也不声明抛出。
         //默认给虚拟机处理,终止程序,什么时候不抛出运行时异常了,在来继续执行程序
-        int[] arr = {1,2,3};
-        System.out.println(arr[2]);//ArrayIndexOutOfBoundsException: 3
-        List<Integer> list = List.of(1, 2, 3);
-        System.out.println(list.get(2));//IndexOutOfBoundsException: Index 3 out-of-bounds for length 3
+        int[] arr = {1, 2, 3};
+        //ArrayIndexOutOfBoundsException: 3
+        System.out.println( arr[2] );
+        List<Integer> list = List.of( 1, 2, 3 );
+        //IndexOutOfBoundsException: Index 3 out-of-bounds for length 3
+        System.out.println( list.get( 2 ) );
 
-        System.out.println("后续代码!");
+        System.out.println( "后续代码!" );
     }
 }

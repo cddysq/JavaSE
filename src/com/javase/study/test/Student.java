@@ -1,4 +1,4 @@
-/*
+package com.javase.study.test;/*
 package com.javase.study.test;
 
 import cn.itcast.junit.Calculator;
@@ -10,9 +10,17 @@ import org.junit.Test;
 public class CalculatorTest {
     */
 /**
-     * 初始化方法：
-     *  用于资源申请，所有测试方法在执行之前都会先执行该方法
-     *//*
+ * 初始化方法：
+ * 用于资源申请，所有测试方法在执行之前都会先执行该方法
+ * <p>
+ * 释放资源方法：
+ * 在所有测试方法执行完后，都会自动执行该方法
+ * <p>
+ * 释放资源方法：
+ * 在所有测试方法执行完后，都会自动执行该方法
+ * <p>
+ * 测试add方法
+ *//*
 
     @Before
     public void init(){
@@ -21,9 +29,9 @@ public class CalculatorTest {
 
     */
 /**
-     * 释放资源方法：
-     *  在所有测试方法执行完后，都会自动执行该方法
-     *//*
+ * 释放资源方法：
+ *  在所有测试方法执行完后，都会自动执行该方法
+ *//*
 
     @After
     public void close(){
@@ -32,9 +40,10 @@ public class CalculatorTest {
 
 
     */
+
 /**
-     * 测试add方法
-     *//*
+ * 测试add方法
+ *//*
 
     @Test
     public void testAdd(){

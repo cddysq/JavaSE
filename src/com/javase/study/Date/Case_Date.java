@@ -18,7 +18,7 @@ import java.util.Scanner;
 public class Case_Date {
     public static void main(String[] args) throws ParseException {
         Scanner scanner = new Scanner( System.in );
-        System.out.println( "请输入您的出生日期，格式：yyyy-MM-dd" );
+        System.out.println( "请输入您的出生日期，格式：yyyy-MM-dd:" );
         //获取出生日期
         String birthdayDateString = scanner.next();
         //将字符串日期按照对应格式，使用parse进行转化为Date

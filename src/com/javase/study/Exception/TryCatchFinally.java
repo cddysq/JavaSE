@@ -38,14 +38,11 @@ public class TryCatchFinally {
     /*
        如果传递的路径,不是.txt结尾
        那么我们就抛出IO异常对象,告知方法的调用者,文件的后缀名不对
-
     */
     public static void readFile(String fileName) throws IOException {
-
         if (!fileName.endsWith( ".txt" )) {
             throw new IOException( "文件的后缀名不对" );
         }
-
         System.out.println( "路径没有问题,读取文件" );
     }
 }

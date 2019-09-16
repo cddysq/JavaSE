@@ -2,6 +2,7 @@ package com.javase.study.Date;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Scanner;
 
 /**
  * Calendar抽象类，用于操作日历
@@ -10,6 +11,10 @@ public class Test_Calendar {
     public static void main(String[] args) {
         demo();
         demo2();
+        Scanner scanner = new Scanner( System.in );
+        System.out.println( "请输入要查询的年份：" );
+        int i = scanner.nextInt();
+        februaryDay( i );
     }
 
     private static void demo2() {
@@ -20,8 +25,8 @@ public class Test_Calendar {
     }
 
     private static void demo() {
-        //使用getInstance方法获取Calendar对象
-        Calendar c = Calendar.getInstance();//多态
+        //使用getInstance方法获取Calendar对象,多态
+        Calendar c = Calendar.getInstance();
 
         //set设置年份
         c.set( Calendar.YEAR, 2060 );
@@ -41,5 +46,19 @@ public class Test_Calendar {
 
         int date = c.get( Calendar.DATE );
         System.out.println( "当前为：第" + date + "天" );
+    }
+
+    /**
+     * 二月天，输入一个年份求二月的天数
+     */
+    private static void februaryDay(Integer year) {
+        //获取当前时间
+        Calendar calendar = Calendar.getInstance();
+        //通过三月份减去一天得出二月份天数
+        calendar.set( year, 2, 1 );
+        calendar.add( Calendar.DATE, -1 );
+        //获取当前的天数
+        int day = calendar.get( Calendar.DATE );
+        System.out.println( year + "年的二月份有" + day + "天" );
     }
 }
