@@ -17,6 +17,6 @@ public class DemoStream_concat {
         //把以上两个流组合为一个流
         Stream<String> concat = Stream.concat( stream1, stream2 );
         //遍历concat流
-        concat.forEach( name -> System.out.println( name ) );
+        concat.forEach( System.out::println );
     }
 }

@@ -17,6 +17,6 @@ public class DemoStream_limit {
         //使用limit对Stream流中的元素进行截取,只要前3个元素
         Stream<String> stream2 = stream.limit( 3 );
         //遍历stream2流
-        stream2.forEach( name -> System.out.println( name ) );
+        stream2.forEach( System.out::println );
     }
 }

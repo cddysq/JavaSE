@@ -18,7 +18,7 @@ public class DemoStream_filter {
             return name.startsWith( "张" );
         } );
         //遍历stream2流
-        stream2.forEach( name -> System.out.println( name ) );
+        stream2.forEach( System.out::println );
 
         /*
             Stream流属于管道流,只能被消费(使用)一次
@@ -28,6 +28,6 @@ public class DemoStream_filter {
             IllegalStateException: stream has already been operated upon or closed
          */
         //遍历stream流
-        stream.forEach( name -> System.out.println( name ) );
+        stream.forEach( System.out::println );
     }
 }

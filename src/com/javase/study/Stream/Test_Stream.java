@@ -2,6 +2,9 @@ package com.javase.study.Stream;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
+import java.util.stream.Stream;
 
 /*
     使用Stream流的方式,遍历集合,对集合中的数据进行过滤
@@ -24,6 +27,9 @@ public class Test_Stream {
         list.stream()
                 .filter( name -> name.startsWith( "张" ) )
                 .filter( name -> name.length() == 3 )
-                .forEach( name -> System.out.println( name ) );
+                .forEach( System.out::println );
+
+        Person p = new Person( "张三" );
+        Stream.of( p ).forEach( System.out::println );
     }
 }

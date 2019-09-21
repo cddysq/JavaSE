@@ -4,8 +4,12 @@ package com.javase.study.InnerClass;
  * 英雄类
  */
 public class Hero {
-    private String name;//英雄的名称
-    private Skill skill;//英雄的技能
+    /**
+     * name:英雄的名称
+     * skill:英雄的技能
+     */
+    private String name;
+    private Skill skill;
 
     public Hero() {
     }

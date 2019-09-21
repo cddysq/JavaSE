@@ -1,5 +1,9 @@
 package com.javase.study.InnerClass;
 
+import com.javase.study.Abstract.Member;
+
+import java.lang.reflect.Method;
+
 /**
  * 内部类的使用
  * <p>
@@ -13,13 +17,10 @@ public class Test_InnerClass {
     public static void main(String[] args) {
 
         //匿名内部类
-        MyInterface obj = new MyInterface() {
-            @Override
-            public void method() {
-                System.out.println( "匿名内部类实现接口" );
-            }
-        };
+        MyInterface obj = () -> System.out.println( "匿名内部类实现接口" );
         obj.method();
+
+        ((MyInterface) () -> System.out.println( "......." )).method();
 
     }
 }

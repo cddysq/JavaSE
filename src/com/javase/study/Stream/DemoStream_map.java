@@ -15,10 +15,8 @@ public class DemoStream_map {
         //获取一个String类型的Stream流
         Stream<String> stream = Stream.of( "1", "2", "3", "4" );
         //使用map方法,把字符串类型的整数,转换(映射)为Integer类型的整数
-        Stream<Integer> stream2 = stream.map( (String s) -> {
-            return Integer.parseInt( s );
-        } );
+        Stream<Integer> stream2 = stream.map( Integer::parseInt );
         //遍历Stream2流
-        stream2.forEach( i -> System.out.println( i ) );
+        stream2.forEach( System.out::println );
     }
 }

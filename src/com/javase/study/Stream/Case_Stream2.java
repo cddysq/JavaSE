@@ -38,6 +38,7 @@ public class Case_Stream2 {
         //5. 将两个队伍合并为一个队伍；存储到一个新集合中。
         //6. 根据姓名创建Person对象；存储到一个新集合中。
         //7. 打印整个队伍的Person对象信息。
-        Stream.concat( oneStream, twoStream ).map( name -> new Person( name ) ).forEach( p -> System.out.println( p ) );
+        //Stream.concat( oneStream, twoStream ).map( name -> new Person( name ) ).forEach( p -> System.out.println( p ) );
+        Stream.concat( oneStream, twoStream ).map( Person::new ).forEach( System.out::println );
     }
 }

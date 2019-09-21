@@ -14,11 +14,11 @@ public class ThisZi extends SuperFu {
     int num = 20;
 
     public ThisZi() {
-        this(123);
+        this( 123 );
     }
 
     public ThisZi(int n) {
-        this(1, 2);
+        this( 1, 2 );
     }
 
     public ThisZi(int n, int m) {
@@ -27,18 +27,21 @@ public class ThisZi extends SuperFu {
 
     public void showNum() {
         int num = 10;
-        System.out.println(num);//局部变量
-        System.out.println(this.num);//本类的成员变量
-        System.out.println(super.num);//父类的成员变量
+        //局部变量
+        System.out.println( num );
+        //本类的成员变量
+        System.out.println( this.num );
+        //父类的成员变量
+        System.out.println( super.num );
     }
 
     public void methodA() {
-        System.out.println("AAA");
+        System.out.println( "AAA" );
     }
 
     public void methodB() {
         this.methodA();//访问另一个成员方法
-        System.out.println("BBB");
+        System.out.println( "BBB" );
 
     }
 

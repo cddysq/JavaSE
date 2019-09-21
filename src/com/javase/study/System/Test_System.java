@@ -1,11 +1,12 @@
 package com.javase.study.System;
 
 import java.util.Arrays;
+import java.util.stream.Stream;
 
 //System系统类
 public class Test_System {
     public static void main(String[] args) {
-        demo1();
+        //demo1();
         demo2();
 
     }
@@ -15,7 +16,7 @@ public class Test_System {
         //currentTimeMillis返回当前时间
         long start = System.currentTimeMillis();
         int count = 0;
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < Integer.MAX_VALUE; i++) {
             count++;
             System.out.println( "程序第" + count + "次执行" );
         }

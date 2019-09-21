@@ -1,5 +1,7 @@
 package com.javase.study.List;
 
+import org.junit.Test;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -61,7 +63,8 @@ public class Test_Set {
     }
 
     //使用Comparator重写排序规则
-    /*public static void method() {
+    @Test
+    public void method() {
         List<Student> studentList = new ArrayList<>();
         studentList.add( new Student( "迟荒", 18 ) );
         studentList.add( new Student( "叶迟荒", 18 ) );
@@ -71,13 +74,10 @@ public class Test_Set {
             @Override
             public int compare(Student o1, Student o2) {
                 int resultAge = o1.getAge() - o2.getAge();
-                if (resultAge == 0) {
-                    result = o1.getName().charAt( 0 ) - o2.getName().charAt( 0 );
-                }
+                int result = resultAge == 0 ? o1.getName().compareTo( o2.getName() ) : resultAge;
                 return result;
             }
         } );
         System.out.println( studentList );
-
-    }*/
+    }
 }

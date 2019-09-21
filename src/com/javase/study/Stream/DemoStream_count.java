@@ -22,6 +22,7 @@ public class DemoStream_count {
         list.add( 7 );
         Stream<Integer> stream = list.stream();
         long count = stream.count();
-        System.out.println( count );//7
+        //7
+        System.out.println( count );
     }
 }

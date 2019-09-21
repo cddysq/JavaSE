@@ -14,12 +14,13 @@ public class SuperZi extends SuperFu {
     }
 
     public void methodZi() {
-        System.out.println(super.num);//父类中的num
+        //父类中的num
+        System.out.println( super.num );
     }
 
     @Override
     public void method() {
         super.method();//访问父类中的method
-        System.out.println("子类方法");
+        System.out.println( "子类方法" );
     }
 }
