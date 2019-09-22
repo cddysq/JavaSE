@@ -37,7 +37,10 @@ public class Test_Math {
 
         //返回a的b次幂的值
         System.out.println( Math.pow( 10, 2 ) );
-
-
+        /*
+        已知一个圆的半径为13，圆周率为Math.PI，求圆的面积，将结果四舍五入
+        S=πr²
+         */
+        System.out.println( Math.round( Math.PI * Math.pow( 13, 2 ) ) );
     }
 }
