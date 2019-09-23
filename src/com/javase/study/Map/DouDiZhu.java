@@ -49,7 +49,25 @@ public class DouDiZhu {
         TreeSet<Integer> player02 = new TreeSet<>();
         TreeSet<Integer> player03 = new TreeSet<>();
         TreeSet<Integer> diPai = new TreeSet<>();
-        //遍历储存牌索引的List集合，获取每一张牌的索引
+
+        fPai( pokerIndex, player01, player02, player03, diPai );
+
+        lookPoker( "刘备", poker, player01 );
+        lookPoker( "关羽", poker, player02 );
+        lookPoker( "张飞", poker, player03 );
+        lookPoker( "底牌", poker, diPai );
+    }
+
+    /**
+     * 遍历储存牌索引的List集合，对每个玩家分发不同索引
+     *
+     * @param pokerIndex 存放牌所有索引的集合
+     * @param player01   玩家一
+     * @param player02   玩家二
+     * @param player03   玩家三
+     * @param diPai      底牌
+     */
+    private static void fPai(ArrayList<Integer> pokerIndex, TreeSet<Integer> player01, TreeSet<Integer> player02, TreeSet<Integer> player03, TreeSet<Integer> diPai) {
         for (int i = 0; i < pokerIndex.size(); i++) {
             Integer p = pokerIndex.get( i );
             //先判断底牌
@@ -66,11 +84,6 @@ public class DouDiZhu {
                 player03.add( p );
             }
         }
-
-        lookPoker( "刘备", poker, player01 );
-        lookPoker( "关羽", poker, player02 );
-        lookPoker( "张飞", poker, player03 );
-        lookPoker( "底牌", poker, diPai );
     }
 
     /**
