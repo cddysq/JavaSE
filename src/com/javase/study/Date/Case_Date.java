@@ -27,7 +27,7 @@ public class Case_Date {
         //把Date格式出生日期转化为毫秒值
         long birthdayDateTime = birthdayDate.getTime();
         //获取当前日期转化为毫秒值
-        long todayTime = new Date().getTime();
+        long todayTime = System.currentTimeMillis();
         //计算出生时间
         long time = todayTime - birthdayDateTime;
         //转化为天数进行输出打印

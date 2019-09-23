@@ -1,4 +1,4 @@
-package com.javase.study.test;/*
+package com.javase.study.generic;/*
 package com.javase.study.test;
 
 import cn.itcast.junit.Calculator;

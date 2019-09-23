@@ -27,7 +27,7 @@ public class DateUtil {
      * @param data 时间
      * @return 格式化后的时间
      */
-    static String formatDate(Date data) {
+    public static String formatDate(Date data) {
         return SDF.format( data );
     }
 
@@ -38,7 +38,7 @@ public class DateUtil {
      * @return 转换后的时间
      * @throws ParseException
      */
-    static Date parse(String strDate) throws ParseException {
+    public static Date parse(String strDate) throws ParseException {
         return SDF.parse( strDate );
     }
 
@@ -48,7 +48,7 @@ public class DateUtil {
      * @param date 时间
      * @return 格式化后的时间
      */
-    static String formatDate(LocalDateTime date) {
+    public static String formatDate(LocalDateTime date) {
         return DTF.format( date );
     }
 
@@ -58,7 +58,7 @@ public class DateUtil {
      * @param strDate 字符串
      * @return 转换后的时间
      */
-    static LocalDateTime parseTime(String strDate) {
+    public static LocalDateTime parseTime(String strDate) {
         //public static LocalDateTime parse​(CharSequence text, DateTimeFormatter formatter)
         // 使用特定格式化程序从文本字符串中获取LocalDateTime的实例。
         return LocalDateTime.parse( strDate, DTF );
@@ -70,7 +70,7 @@ public class DateUtil {
      * @param date 日期
      * @return java.util.Date
      */
-    static LocalDateTime DateToLocalDateTime(Date date) {
+    public static LocalDateTime DateToLocalDateTime(Date date) {
         Instant instant = date.toInstant();
         ZoneId zoneId = ZoneId.systemDefault();
         return instant.atZone( zoneId ).toLocalDateTime();
@@ -82,7 +82,7 @@ public class DateUtil {
      * @param localDateTime 线程安全日期
      * @return java.util.Date
      */
-    static Date LocalDateTimeToDate(LocalDateTime localDateTime) {
+    public static Date LocalDateTimeToDate(LocalDateTime localDateTime) {
         ZoneId zoneId = ZoneId.systemDefault();
         ZonedDateTime zonedDateTime = localDateTime.atZone( zoneId );
         return Date.from( zonedDateTime.toInstant() );
@@ -106,6 +106,5 @@ public class DateUtil {
         System.out.println( date5 );
         LocalDateTime date6 = DateToLocalDateTime( date5 );
         System.out.println( date6 );
-
     }
 }

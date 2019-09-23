@@ -2,8 +2,9 @@ package com.javase.study.Date;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import java.util.logging.SimpleFormatter;
 
 
 /**
@@ -12,11 +13,15 @@ import java.util.logging.SimpleFormatter;
  * 由于是抽象类不能直接使用，需要使用它的实现类SimpleDateFormat
  */
 public class Test_Date {
+    private static final String FORMAT = "yyyy:MM:dd HH:mm:ss";
+
     public static void main(String[] args) throws ParseException {
         date1();
         date2();
         date3();
-
+        week();
+        System.out.println( new SimpleDateFormat( FORMAT ).format( new Date() ) );
+        System.out.println( DateTimeFormatter.ofPattern( FORMAT ).format( LocalDateTime.now() ) );
     }
 
     public static void date1() {
@@ -39,5 +44,18 @@ public class Test_Date {
         //Date parse(String source)把符合模式的字符串，解析为Date日期
         Date date = sdf.parse( "2020年10月23日 11时11分11秒" );
         System.out.println( date );
+    }
+
+    /**
+     * 用程序判断2018年2月14日是星期几
+     */
+    public static void week() throws ParseException {
+        //将字符串时间转为Date
+        Date nowDate = new SimpleDateFormat( "yyyy年MM月dd日" ).parse( "2019年9月22日" );
+        //获取转化后时间的毫秒值
+        long time = nowDate.getTime();
+        //将当前时间设置为获取到的时间并格式化
+        String format = new SimpleDateFormat( "EEEE" ).format( new Date( time ) );
+        System.out.println( format );
     }
 }

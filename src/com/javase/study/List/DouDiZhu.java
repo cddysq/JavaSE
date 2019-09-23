@@ -27,7 +27,8 @@ public class DouDiZhu {
             }
         }
         //System.out.println(poker);
-        /**
+
+        /*
          * 2.洗牌
          *使用集合的工具类Collections中的方法
          * static void shuffle(List<?> list)使用默认的随机源对指定列表进行置还
@@ -54,7 +55,7 @@ public class DouDiZhu {
             //获取每一张牌
             String p = poker.get( i );
             //轮流发牌
-            if (i >= 51) {
+            if (i >= poker.size() - 3) {
                 //发底牌
                 diPai.add( p );
             } else if (i % 3 == 0) {
@@ -63,7 +64,7 @@ public class DouDiZhu {
             } else if (i % 3 == 1) {
                 //给玩家二发牌
                 player02.add( p );
-            } else if (i % 3 == 2) {
+            } else {
                 //给玩家三发牌
                 player03.add( p );
             }

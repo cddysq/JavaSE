@@ -32,7 +32,5 @@ public class Case_Map {
             Integer value = map.get( key );
             System.out.println( key + "=" + value );
         }
-
-
     }
 }
