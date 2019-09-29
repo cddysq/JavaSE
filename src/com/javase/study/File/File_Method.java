@@ -26,56 +26,61 @@ public class File_Method {
         //show02("d:\\","a.txt");//d:\a.txt
         show03();
 
-        File f = new File("C:\\Users\\itcast\\IdeaProjects\\shungyuan");
+        File f = new File( "C:\\Users\\itcast\\IdeaProjects\\shungyuan" );
         long length = f.length();
-        System.out.println(length);
+        System.out.println( length );
     }
 
-    /*
-        File(File parent, String child) 根据 parent 抽象路径名和 child 路径名字符串创建一个新 File 实例。
-        参数:把路径分成了两部分
-            File parent:父路径
-            String child:子路径
-        好处:
-             父路径和子路径,可以单独书写,使用起来非常灵活;父路径和子路径都可以变化
-             父路径是File类型,可以使用File的方法对路径进行一些操作,再使用路径创建对象
+    /**
+     * File(File parent, String child) 根据 parent 抽象路径名和 child 路径名字符串创建一个新 File 实例。
+     * 参数:把路径分成了两部分
+     * File parent:父路径
+     * String child:子路径
+     * 好处:
+     * 父路径和子路径,可以单独书写,使用起来非常灵活;父路径和子路径都可以变化
+     * 父路径是File类型,可以使用File的方法对路径进行一些操作,再使用路径创建对象
      */
     private static void show03() {
-        File parent = new File("c:\\");
-        File file = new File(parent,"hello.java");
-        System.out.println(file);//c:\hello.java
+        File parent = new File( "c:\\" );
+        File file = new File( parent, "hello.java" );
+        //c:\hello.java
+        System.out.println( file );
     }
 
-    /*
-        File(String parent, String child) 根据 parent 路径名字符串和 child 路径名字符串创建一个新 File 实例。
-        参数:把路径分成了两部分
-            String parent:父路径
-            String child:子路径
-        好处:
-            父路径和子路径,可以单独书写,使用起来非常灵活;父路径和子路径都可以变化
+    /**
+     * File(String parent, String child) 根据 parent 路径名字符串和 child 路径名字符串创建一个新 File 实例。
+     * 参数:把路径分成了两部分
+     * String parent:父路径
+     * String child:子路径
+     * 好处:
+     * 父路径和子路径,可以单独书写,使用起来非常灵活;父路径和子路径都可以变化
      */
     private static void show02(String parent, String child) {
-        File file = new File(parent,child);
-        System.out.println(file);//c:\a.txt
+        File file = new File( parent, child );
+        //c:\a.txt
+        System.out.println( file );
     }
 
-    /*
-        File(String pathname) 通过将给定路径名字符串转换为抽象路径名来创建一个新 File 实例。
-        参数:
-            String pathname:字符串的路径名称
-            路径可以是以文件结尾,也可以是以文件夹结尾
-            路径可以是相对路径,也可以是绝对路径
-            路径可以是存在,也可以是不存在
-            创建File对象,只是把字符串路径封装为File对象,不考虑路径的真假情况
+    /**
+     * File(String pathname) 通过将给定路径名字符串转换为抽象路径名来创建一个新 File 实例。
+     * 参数:
+     * String pathname:字符串的路径名称
+     * 路径可以是以文件结尾,也可以是以文件夹结尾
+     * 路径可以是相对路径,也可以是绝对路径
+     * 路径可以是存在,也可以是不存在
+     * 创建File对象,只是把字符串路径封装为File对象,不考虑路径的真假情况
      */
     private static void show01() {
-        File f1 = new File("C:\\Users\\itcast\\IdeaProjects\\shungyuan\\a.txt");
-        System.out.println(f1);//重写了Object类的toString方法 C:\Users\itcast\IdeaProjects\shungyuan\a.txt
+        File f1 = new File( "C:\\Users\\itcast\\IdeaProjects\\shungyuan\\a.txt" );
+        //重写了Object类的toString方法 C:\Users\itcast\IdeaProjects\shungyuan\a.txt
+        System.out.println( f1 );
 
-        File f2 = new File("C:\\Users\\itcast\\IdeaProjects\\shungyuan");
-        System.out.println(f2);//C:\Users\itcast\IdeaProjects\shungyuan
+        File f2 = new File( "C:\\Users\\itcast\\IdeaProjects\\shungyuan" );
+        //C:\Users\itcast\IdeaProjects\shungyuan
+        System.out.println( f2 );
 
-        File f3 = new File("b.txt");
-        System.out.println(f3);//b.txt
+        File f3 = new File( "b.txt" );
+        //b.txt
+        System.out.println( f3 );
     }
 }

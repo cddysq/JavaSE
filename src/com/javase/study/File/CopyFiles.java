@@ -19,7 +19,7 @@ public class CopyFiles {
     public static void main(String[] args) throws IOException {
         long s = System.currentTimeMillis();
         //1.创建字节缓冲输入流对象,构造方法中传递字节输入流
-        BufferedInputStream bis = new BufferedInputStream( new FileInputStream( "D:\\迅雷下载\\海王.mkv" ) );
+        BufferedInputStream bis = new BufferedInputStream( new FileInputStream( "D:\\迅雷下载\\阳光电影www.ygdy8.com.龙牌之谜.HD.1080p.国语中英双字.mkv" ) );
         //2.创建字节缓冲输出流对象,构造方法中传递字节输出流
         BufferedOutputStream bos = new BufferedOutputStream( new FileOutputStream( "F:\\Java\\学习笔记\\Java\\File\\copy.mkv" ) );
         //3.使用字节缓冲输入流对象中的方法read,读取文件
@@ -30,7 +30,7 @@ public class CopyFiles {
         }*/
 
         //使用数组缓冲读取多个字节,写入多个字节,缓存区大小影响速度快慢
-        byte[] bytes = new byte[1024 * 100];
+        byte[] bytes = new byte[1024];
         int len = 0;
         while ((len = bis.read( bytes )) != -1) {
             bos.write( bytes, 0, len );

@@ -1,5 +1,7 @@
 package com.javase.study.File;
 
+import java.io.File;
+
 /*
     递归:方法自己调用自己
     - 递归的分类:
@@ -21,21 +23,46 @@ public class Test_Recurison {
         System.out.println( s );
         int jc = jc( 10 );
         System.out.println( jc );
+        File file = new File( "F:\\Java\\学习笔记" );
+        findAllFile( file );
     }
 
-    /*
-        构造方法,禁止递归
-            编译报错:构造方法是创建对象使用的,一直递归会导致内存中有无数多个对象,直接编译报错
+    /**
+     * 递归查找目录下的所有文件
+     *
+     * @param file
+     */
+    private static void findAllFile(File file) {
+        //将所有目录文件列出来封装成数组
+        File[] files = file.listFiles();
+        //判断是否有数据
+        if (files != null) {
+            //遍历数组
+            for (File f : files) {
+                //是目录继续遍历
+                if (f.isDirectory()) {
+                    findAllFile( f );
+                } else {
+                    //不是目录输出文件绝对路径
+                    System.out.println( f.getAbsoluteFile() );
+                }
+            }
+        }
+    }
+
+    /**
+     * 构造方法,禁止递归
+     * 编译报错:构造方法是创建对象使用的,一直递归会导致内存中有无数多个对象,直接编译报错
      */
     public Test_Recurison() {
         //Demo01Recurison();
     }
 
-    /*
-            在递归中虽然有限定条件，但是递归次数不能太多。否则也会发生栈内存溢出。
-            11157
-                Exception in thread "main" java.lang.StackOverflowError
-         */
+    /**
+     * 在递归中虽然有限定条件，但是递归次数不能太多。否则也会发生栈内存溢出。
+     * 11157
+     * Exception in thread "main" java.lang.StackOverflowError
+     */
     private static void b(int i) {
         System.out.println( i );
         if (i == 10000) {
@@ -44,9 +71,9 @@ public class Test_Recurison {
         b( ++i );
     }
 
-    /*
-        递归一定要有条件限定，保证递归能够停止下来，否则会发生栈内存溢出。
-        Exception in thread "main" java.lang.StackOverflowError
+    /**
+     * 递归一定要有条件限定，保证递归能够停止下来，否则会发生栈内存溢出。
+     * Exception in thread "main" java.lang.StackOverflowError
      */
     private static void a() {
         System.out.println( "a方法!" );
@@ -68,4 +95,5 @@ public class Test_Recurison {
         }
         return n * sum( n - 1 );
     }
+
 }
