@@ -1,12 +1,10 @@
 package com.javase.study;
 
 
-import com.javase.study.util.ArrayTool;
 import org.junit.Test;
 
-import javax.sound.midi.Soundbank;
-import java.lang.reflect.Array;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class Clutter {
 
