@@ -36,7 +36,5 @@ public class File_JDK7 {
             //异常的处理逻辑
             System.out.println( e );
         }
-
-
     }
 }

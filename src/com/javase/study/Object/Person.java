@@ -23,7 +23,6 @@ public class Person {
                 ", age=" + age +
                 '}';
     }
-
     @Override
     public boolean equals(Object o) {
         //判断是否为同一个对象

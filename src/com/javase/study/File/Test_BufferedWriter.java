@@ -1,8 +1,6 @@
 package com.javase.study.File;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 /*
     java.io.BufferedWriter extends Writer
@@ -39,18 +37,21 @@ import java.io.IOException;
  */
 public class Test_BufferedWriter {
     public static void main(String[] args) throws IOException {
-        //System.out.println();
-        //1.创建字符缓冲输出流对象,构造方法中传递字符输出流
+        //创建字符缓冲输入流对象,构造方法中传递字符输入流
+        BufferedReader br = new BufferedReader( new FileReader( "F:\\Java\\学习笔记\\Java\\File\\b.txt" ) );
+        //创建字符缓冲输出流对象,构造方法中传递字符输出流
         BufferedWriter bw = new BufferedWriter( new FileWriter( "F:\\Java\\学习笔记\\Java\\File\\c.txt" ) );
-        //2.调用字符缓冲输出流中的方法write,把数据写入到内存缓冲区中
-        for (int i = 0; i < 10; i++) {
-            bw.write( "字符缓冲流" );
-            //bw.write("\r\n");
+        String line = null;
+        //调用字符缓冲输入流中的方法readLine(),把数据读入到内存缓冲区中
+        while ((line = br.readLine()) != null) {
+            //一次写入一行数据
+            bw.write( line );
             bw.newLine();
+            //调用字符缓冲输出流中的方法flush,把内存缓冲区中的数据,刷新到文件中
+            bw.flush();
         }
-        //3.调用字符缓冲输出流中的方法flush,把内存缓冲区中的数据,刷新到文件中
-        bw.flush();
         //4.释放资源
         bw.close();
+        br.close();
     }
 }

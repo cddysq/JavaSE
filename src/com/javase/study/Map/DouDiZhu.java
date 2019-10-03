@@ -8,10 +8,10 @@ import java.util.*;
  */
 public class DouDiZhu {
     public static void main(String[] args) {
-        /**
-         * 1.准备牌
-         * 创建一个Map集合，储存牌的索引和组装好的牌
-         */
+
+         /*1.准备牌
+         创建一个Map集合，储存牌的索引和组装好的牌*/
+
         HashMap<Integer, String> poker = new HashMap<>();
         //创建一个集合储存牌的索引
         ArrayList<Integer> pokerIndex = new ArrayList<>();
@@ -35,16 +35,13 @@ public class DouDiZhu {
                 index++;
             }
         }
-        /**
-         * 2.洗牌
-         * 使用Collections中的shuffle(List)方法
-         */
+
+         /* 2.洗牌
+          使用Collections中的shuffle(List)方法*/
         Collections.shuffle( pokerIndex );
 
-        /**
-         * 3.排序发牌
-         * 定义四个集合，储存玩家牌的索引，和底牌的索引
-         */
+          /*3.排序发牌
+          定义四个集合，储存玩家牌的索引，和底牌的索引*/
         TreeSet<Integer> player01 = new TreeSet<>();
         TreeSet<Integer> player02 = new TreeSet<>();
         TreeSet<Integer> player03 = new TreeSet<>();
@@ -96,7 +93,7 @@ public class DouDiZhu {
      * @param poker      牌
      * @param pokerIndex 牌对应索引
      */
-    public static void lookPoker(String name, HashMap<Integer, String> poker, TreeSet<Integer> pokerIndex) {
+    private static void lookPoker(String name, HashMap<Integer, String> poker, TreeSet<Integer> pokerIndex) {
         //输出玩家名称
         System.out.println( name + "：" );
         //遍历玩家或底牌集合，获取牌的索引

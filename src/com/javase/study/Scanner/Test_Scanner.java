@@ -73,8 +73,8 @@ public class Test_Scanner {
                 System.out.println( i );
                 count++;
             }
-            System.out.println( "水仙花一共有" + count + "个" );
         }
+        System.out.println( "水仙花一共有" + count + "个" );
     }
 
 }
