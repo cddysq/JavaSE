@@ -26,7 +26,7 @@ public class Test_ObjectOutputStream {
         //1.创建ObjectOutputStream对象,构造方法中传递字节输出流
         ObjectOutputStream oos = new ObjectOutputStream( new FileOutputStream( "F:\\Java\\学习笔记\\Java\\File\\person.txt" ) );
         //2.使用ObjectOutputStream对象中的方法writeObject,把对象写入到文件中
-        oos.writeObject( new Person( "小美女", 18 ) );
+        oos.writeObject( new Person( "girl",18 ) );
         //3.释放资源
         oos.close();
     }

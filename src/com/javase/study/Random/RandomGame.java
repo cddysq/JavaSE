@@ -8,7 +8,11 @@ import java.util.Scanner;
  * 指定猜测次数，使用for循环
  */
 public class RandomGame {
-    public static void main(String[] args) {
+    private RandomGame() {
+
+    }
+
+    public static void start() {
         Random r = new Random();
         int randomNum = r.nextInt( 100 ) + 1;
         Scanner sc = new Scanner( System.in );
