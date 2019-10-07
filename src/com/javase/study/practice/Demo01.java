@@ -1,11 +1,10 @@
 package com.javase.study.practice;
 
 import com.javase.study.Clutter;
-import com.javase.study.Interface.Main;
 import org.junit.Test;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -14,20 +13,53 @@ import java.util.Scanner;
  * @Date：2019/9/6 10:21
  */
 public class Demo01 {
+    /**
+     * 需求：給定一个数字n，返回1到n之间的质数(素数)个数，不包括n本身。
+     * 质数又被称为素数，是指一个大于1的自然数，除了1和它自身外，不能被其它自然数整除。
+     * 例如：n = 5 ，返回2，因为1-5之间的质数为：2和3。
+     */
+    private static Integer getSum(int n) {
+        //存放质数
+        List<Integer> arr = new ArrayList<>();
+        for (int i = 2; i < n; i++) {
+            if (isPrimeNumber( i )) {
+                arr.add( i );
+            }
+        }
+        //打印质数
+        System.out.println( arr );
+        //集合长度为质数个数
+        return arr.size();
+    }
+
+    /**
+     * 判断是否为质素
+     *
+     * @param i 待判断的最大数值
+     * @return 是返回真，否假
+     */
+    private static boolean isPrimeNumber(int i) {
+        for (int j = 2; j < i; j++) {
+            if (i % j == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 
     private static Scanner s = new Scanner( System.in );
     private Random r = new Random();
 
     private static int getMax(int a, int b, int c) {
-        int temp = a > b ? a : b;
-        int max = temp > c ? temp : c;
-        return max;
+        int temp = Math.max( a, b );
+        return Math.max( temp, c );
     }
 
     public static void main(String[] args) {
         //jo();
         //reward();
-        month();
+        //month();
+        System.out.println( getSum( 100 ) );
     }
 
     /**
@@ -74,11 +106,11 @@ public class Demo01 {
         int number = s.nextInt();
         if (number < 0 || number > 100) {
             System.out.println( "数据错误" );
-        } else if (number >= 95 && number <= 100) {
+        } else if (number >= 95) {
             System.out.println( "山地自行车" );
-        } else if (number >= 90 && number <= 94) {
+        } else if (number >= 90) {
             System.out.println( "游乐园游玩" );
-        } else if (number >= 85 && number <= 89) {
+        } else if (number >= 85) {
             System.out.println( "奖励变形金刚" );
         } else {
             System.out.println( "暴揍一顿" );
@@ -175,18 +207,18 @@ public class Demo01 {
      * 统计高于平均分的分数有多少个
      */
     @Test
-    public void count02(){
+    public void count02() {
         int[] arr = {95, 92, 75, 56, 98, 71, 80, 58, 91, 91};
 
     }
 
     /**
      * 求数组平均数
+     *
      * @param arr
      */
-    public static int avg(int[] arr){
+    public static int avg(int[] arr) {
         int avg = 0;
-
         return avg;
     }
 }
