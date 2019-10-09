@@ -1,4 +1,5 @@
 package com.javase.study.Thread.Case;
+
 /*
     资源类:包子类
 	设置包子的属性

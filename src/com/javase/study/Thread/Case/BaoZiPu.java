@@ -41,7 +41,7 @@ public class BaoZiPu extends Thread {
             //必须同时同步技术保证两个线程只能有一个在执行
             synchronized (bz) {
                 //对包子的状态进行判断
-                if (bz.flag == true) {
+                if (bz.flag) {
                     //包子铺调用wait方法进入等待状态
                     try {
                         bz.wait();

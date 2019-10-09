@@ -13,7 +13,9 @@ import java.util.Properties;
 public class GuessTheNumber {
     public static void main(String[] args) throws Exception {
         Properties p = new Properties();
-        p.load( new FileReader( "resources/count" ) );
+        FileReader reader = new FileReader( "resources/count" );
+        p.load( reader );
+        reader.close();
         String number = p.getProperty( "count" );
         int count = Integer.parseInt( number );
         if (count > 1) {
@@ -22,7 +24,9 @@ public class GuessTheNumber {
             RandomGame.start();
             count++;
             p.setProperty( "count", String.valueOf( count ) );
-            p.store( new FileWriter( "resources/count" ), "ok" );
+            FileWriter writer = new FileWriter( "resources/count" );
+            p.store( writer, "ok" );
+            writer.close();
         }
     }
 }

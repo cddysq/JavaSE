@@ -27,7 +27,7 @@ public class ChiHuo extends Thread{
             //必须同时同步技术保证两个线程只能有一个在执行
             synchronized (bz){
                 //对包子的状态进行判断
-                if(bz.flag==false){
+                if(!bz.flag){
                     //吃货调用wait方法进入等待状态
                     try {
                         bz.wait();
