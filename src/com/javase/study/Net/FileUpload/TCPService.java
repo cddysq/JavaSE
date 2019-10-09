@@ -36,34 +36,7 @@ public class TCPService {
              */
             new Thread( () -> {
                 try {
-                    //3.使用Socket对象中的方法getInputStream,获取到网络字节输入流InputStream对象
-                    //InputStream is = socket.getInputStream();
-                    BufferedInputStream bis = new BufferedInputStream( socket.getInputStream() );
-                    //4.判断F:\Java\学习笔记\Java\File件夹是否存在,不存在则创建
-                    File file = new File( "F:\\Java\\学习笔记\\Java\\File\\Upload" );
-                    if (!file.exists()) {
-                        file.mkdirs();
-                    }
-                    /*
-                       自定义一个文件的命名规则:防止同名的文件被覆盖
-                       规则:域名+毫秒值+随机数
-                    */
-                    String fileName = "yileaf" + System.currentTimeMillis() + new Random().nextInt( 666666 ) + ".mp3";
-                    //5.创建一个本地字节输出流FileOutputStream对象,构造方法中绑定要输出的目的地
-                    BufferedOutputStream bos = new BufferedOutputStream( new FileOutputStream( file + "\\" + fileName ) );
-                    //6.使用网络字节输入流InputStream对象中的方法read,读取客户端上传的文件
-                    int len = 0;
-                    byte[] bytes = new byte[1024 * 6];
-                    while ((len = bis.read( bytes )) != -1) {
-                        //7.使用本地字节输出流FileOutputStream对象中的方法write,把读取到的文件保存到服务器的硬盘上
-                        bos.write( bytes, 0, len );
-                    }
-                    //8.使用Socket对象中的方法getOutputStream,获取到网络字节输出流OutputStream对象
-                    //9.使用网络字节输出流OutputStream对象中的方法write,给客户端回写"上传成功"\
-                    socket.getOutputStream().write( "上传成功".getBytes());
-                    //10.释放资源(OutputStream,Socket,ServerSocket)
-                    bos.close();
-                    socket.close();
+                    receiveFiles( socket );
                 } catch (IOException e) {
                     System.out.println( e );
                 }
@@ -73,5 +46,35 @@ public class TCPService {
         }
         /*服务器不用关闭
         service.close();*/
+    }
+
+    private static void receiveFiles(Socket socket) throws IOException {
+        //3.使用Socket对象中的方法getInputStream,获取到网络字节输入流InputStream对象
+        BufferedInputStream bis = new BufferedInputStream( socket.getInputStream() );
+        //4.判断F:\Java\学习笔记\Java\File件夹是否存在,不存在则创建
+        File file = new File( "F:\\Java\\学习笔记\\Java\\File\\Upload" );
+        if (!file.exists()) {
+            file.mkdirs();
+        }
+        /*
+           自定义一个文件的命名规则:防止同名的文件被覆盖
+           规则:域名+毫秒值+随机数
+        */
+        String fileName = "yileaf" + System.currentTimeMillis() + new Random().nextInt( 666666 ) + ".mp3";
+        //5.创建一个本地字节输出流FileOutputStream对象,构造方法中绑定要输出的目的地
+        BufferedOutputStream bos = new BufferedOutputStream( new FileOutputStream( file + "\\" + fileName ) );
+        //6.使用网络字节输入流InputStream对象中的方法read,读取客户端上传的文件
+        int len = 0;
+        byte[] bytes = new byte[1024];
+        while ((len = bis.read( bytes )) != -1) {
+            //7.使用本地字节输出流FileOutputStream对象中的方法write,把读取到的文件保存到服务器的硬盘上
+            bos.write( bytes, 0, len );
+        }
+        //8.使用Socket对象中的方法getOutputStream,获取到网络字节输出流OutputStream对象
+        //9.使用网络字节输出流OutputStream对象中的方法write,给客户端回写"上传成功"\
+        socket.getOutputStream().write( "上传成功".getBytes() );
+        //10.释放资源(OutputStream,Socket,ServerSocket)
+        bos.close();
+        socket.close();
     }
 }
