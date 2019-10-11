@@ -33,9 +33,7 @@ public class Test_Lambda {
         }, "普通线程" ).start();
 
         //Lambda实现线程
-        new Thread( () -> {
-            System.out.println( Thread.currentThread().getName() );
-        }, "优化线程" ).start();
+        new Thread( () -> System.out.println( Thread.currentThread().getName() ), "优化线程" ).start();
 
     }
 }
