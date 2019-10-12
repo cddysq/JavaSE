@@ -5,6 +5,7 @@ import java.util.function.Consumer;
 /**
  * @Author：Haotian
  * @Date：2019/10/12 10:34
+ * Consumer<T>接口也被称为消费型接口，它消费的数据的数据类型由泛型指定
  */
 public class ConsumerTest {
     public static void main(String[] args) {

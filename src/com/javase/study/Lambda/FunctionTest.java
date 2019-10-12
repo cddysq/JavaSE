@@ -5,6 +5,7 @@ import java.util.function.Function;
 /**
  * @Author：Haotian
  * @Date：2019/10/12 14:54
+ * Function<T,R>接口通常用于对参数进行处理，转换(处理逻辑由Lambda表达式实现)，然后返回一个新的值
  */
 public class FunctionTest {
     public static void main(String[] args) {
