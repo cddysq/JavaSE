@@ -46,7 +46,7 @@ public class Test_Predicate {
         //调用filter方法,传递字符串数组和两个Lambda表达式
         ArrayList<String> list = filter( array, (String s) -> {
             //获取字符串中的性别,判断是否为女
-            return s.split( "," )[1].equals( "女" );
+            return "女".equals( s.split( "," )[1] );
         }, (String s) -> {
             //获取字符串中的姓名,判断长度是否为4个字符
             return s.split( "," )[0].length() == 4;

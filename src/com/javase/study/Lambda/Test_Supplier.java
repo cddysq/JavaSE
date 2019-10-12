@@ -1,5 +1,6 @@
 package com.javase.study.Lambda;
 
+import java.util.Arrays;
 import java.util.function.Supplier;
 
 /**
@@ -33,5 +34,7 @@ public class Test_Supplier {
             return max;
         } );
         System.out.println( "数组中的最大值为：" + maxValue );
+        //stream流查找最大值
+        Arrays.stream( arr ).max().stream().forEach( System.out::println );
     }
 }
