@@ -44,13 +44,11 @@ public class Test_Predicate {
         //定义一个储存字符串的数组
         String[] array = {"迪丽热巴,女", "古力娜扎,女", "马尔扎哈,男", "赵丽颖,女"};
         //调用filter方法,传递字符串数组和两个Lambda表达式
-        ArrayList<String> list = filter( array, (String s) -> {
-            //获取字符串中的性别,判断是否为女
-            return "女".equals( s.split( "," )[1] );
-        }, (String s) -> {
-            //获取字符串中的姓名,判断长度是否为4个字符
-            return s.split( "," )[0].length() == 4;
-        } );
+        ArrayList<String> list = filter( array,
+                //获取字符串中的性别,判断是否为女
+                s -> "女".equals( s.split( "," )[1] ),
+                //获取字符串中的姓名,判断长度是否为4个字符
+                s -> s.split( "," )[0].length() == 4 );
         //遍历集合
         for (String s : list) {
             System.out.println( s );
