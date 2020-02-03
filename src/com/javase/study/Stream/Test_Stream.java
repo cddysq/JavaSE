@@ -114,7 +114,7 @@ public class Test_Stream {
     public void parallelDemo3() {
         //并行流使用的线程池：ForkJoinPool.commonPool
         //默认的线程数是当前机器的核心数
-        // 使用这个属性可以修改默认的线程数
+        //使用这个属性可以修改默认的线程数
         System.setProperty( "java.util.concurrent.ForkJoinPool.common.parallelism", "20" );
         IntStream.range( 1, 100 ).parallel().peek( Test_Stream::debug1 ).max();
     }
@@ -130,7 +130,6 @@ public class Test_Stream {
         pool.shutdown();
         //等待一下，防止主线程退出
         synchronized (pool) {
-
             try {
                 pool.wait();
             } catch (InterruptedException e) {
@@ -156,4 +155,5 @@ public class Test_Stream {
             e.printStackTrace();
         }
     }
+
 }
